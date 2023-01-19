@@ -3,58 +3,42 @@ package pro.sky.java.course1.OOP_Introduction;
 public class Main {
     public static void main(String[] args) {
         /*
-
-        Задание 1.
+        Задание 2.
          */
-        Car ladaGranta = new Car();
-        ladaGranta.setBrand("Lada");
-        ladaGranta.setModel("Granta");
-        ladaGranta.setEngineVolume(1.7);
-        ladaGranta.setColor("Желтый");
-        ladaGranta.setYear(2015);
-        ladaGranta.setCountry("Россия");
-
-        Car audiA8 = new Car();
-        audiA8.setBrand("Audi");
-        audiA8.setModel("A8 50 L TDI quattro");
-        audiA8.setEngineVolume(3.0);
-        audiA8.setColor("Черный");
-        audiA8.setYear(2020);
-        audiA8.setCountry("Германия");
-
-        Car bMWZ8= new Car();
-        bMWZ8.setBrand("BMW");
-        bMWZ8.setModel("Z8");
-        bMWZ8.setEngineVolume(3.0);
-        bMWZ8.setColor("Черный");
-        bMWZ8.setYear(2021);
-        bMWZ8.setCountry("Германия");
-
-        Car kiaSportage = new Car();
-        kiaSportage.setBrand("Kia");
-        kiaSportage.setModel("Sportage 4-го поколения");
-        kiaSportage.setEngineVolume(2.4);
-        kiaSportage.setColor("Красный");
-        kiaSportage.setYear(2018);
-        kiaSportage.setCountry("Южная Корея");
-
-        Car hyundaiAvante = new Car();
-        hyundaiAvante.setBrand("Hyundai");
-        hyundaiAvante.setModel("Avante");
-        hyundaiAvante.setEngineVolume(1.6);
-        hyundaiAvante.setColor("Оранжевый");
-        hyundaiAvante.setYear(2016);
-        hyundaiAvante.setCountry("Южная Корея");
+        Car ladaGranta = new Car("Lada", "Granta", 1.7, "Жёлтый", 2015, "Россия");
+        Car audiA8 = new Car("Audi", "A8 50 L TDI quattro", 3.0, "Чёрный", 2020, "Германия");
+        Car bMWZ8= new Car("BMW", "Z8", 3.0, "Черный", 2021, "Германия");
+        Car kiaSportage = new Car("Kia", "Sportage 4-го поколения", 2.4, "Красный", 2018, "Южная Корея");
+        Car hyundaiAvante = new Car("Hyundai", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея");
 
         /*
         Вывод информации об автомобилях.
          */
+        System.out.println("Тест задания 2.");
         System.out.println(ladaGranta);
         System.out.println(audiA8);
         System.out.println(bMWZ8);
         System.out.println(kiaSportage);
         System.out.println(hyundaiAvante);
+        System.out.println();
 
+        /*
+        Задание 3.
+         */
+        Car ladaGranta_2 = new Car("", null, 0, "", 0, "");
+        Car audiA8_2 = new Car(null, "", -1, null, -20, null);
+        Car bMWZ8_2= new Car("BMW", "Z8", 3.0, "Черный", 2021, "Германия");
+        Car kiaSportage_2 = new Car(null, null, 2.4, "Зелёный", 2008, "Корея");
+        Car hyundaiAvante_2 = new Car("", "", 1.6, "Серый", 1996, "Япония");
 
+        /*
+        Вывод информации об автомобилях.
+         */
+        System.out.println("Тест задания 3.");
+        System.out.println(ladaGranta_2);
+        System.out.println(audiA8_2);
+        System.out.println(bMWZ8_2);
+        System.out.println(kiaSportage_2);
+        System.out.println(hyundaiAvante_2);
     }
 }
