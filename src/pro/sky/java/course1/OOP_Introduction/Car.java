@@ -8,12 +8,26 @@ public class Car {
     private int year;
     private String country;
 
+    public Car(String brand, String model, double engineVolume, String color, int year, String country) {
+        setBrand(brand);
+        setModel(model);
+        setEngineVolume(engineVolume);
+        setColor(color);
+        setYear(year);
+        setCountry(country);
+    }
+
     public String getBrand() {
         return brand;
     }
 
     public void setBrand(String brand) {
-        this.brand = brand;
+        if (brand ==null || brand.equals("")){
+            this.brand = "default";
+        }
+        else{
+            this.brand = brand;
+        }
     }
 
     public String getModel() {
@@ -21,7 +35,11 @@ public class Car {
     }
 
     public void setModel(String model) {
-        this.model = model;
+        if (model == null || model.equals("")) {
+            this.model = "default";
+        } else {
+            this.model = model;
+        }
     }
 
     public double getEngineVolume() {
@@ -29,7 +47,11 @@ public class Car {
     }
 
     public void setEngineVolume(double engineVolume) {
-        this.engineVolume = engineVolume;
+        if (engineVolume <= 0) {
+            this.engineVolume = 1.5;
+        } else {
+            this.engineVolume = engineVolume;
+        }
     }
 
     public String getColor() {
@@ -37,7 +59,11 @@ public class Car {
     }
 
     public void setColor(String color) {
-        this.color = color;
+        if (color ==null || color.equals("")) {
+            this.color = "белый";
+        } else {
+            this.color = color;
+        }
     }
 
     public int getYear() {
@@ -45,7 +71,11 @@ public class Car {
     }
 
     public void setYear(int year) {
-        this.year = year;
+        if (year <= 0) {
+            this.year = 2000;
+        } else {
+            this.year = year;
+        }
     }
 
     public String getCountry() {
@@ -53,7 +83,11 @@ public class Car {
     }
 
     public void setCountry(String country) {
-        this.country = country;
+        if (country ==null || country.equals("")) {
+            this.country = "default";
+        } else {
+            this.country = country;
+        }
     }
 
     @Override
