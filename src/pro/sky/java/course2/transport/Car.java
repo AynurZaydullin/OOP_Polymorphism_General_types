@@ -1,4 +1,4 @@
-package pro.sky.java.course1.OOP_Introduction;
+package pro.sky.java.course2.transport;
 
 public class Car {
     private String brand;
