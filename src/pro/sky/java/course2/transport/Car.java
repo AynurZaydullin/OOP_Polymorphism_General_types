@@ -2,13 +2,8 @@ package pro.sky.java.course2.transport;
 
 import java.time.LocalDate;
 
-public class Car {
-    private String brand;
-    private String model;
+public class Car extends Transport {
     private double engineVolume;
-    private String color;
-    private int year;
-    private String country;
     private String transmission;
     private String carBodyType;
     private int registrationNumber;
@@ -17,48 +12,18 @@ public class Car {
     private final int DEFAULT_NUMBER_OF_SEATS = 2;
     boolean isSummerTires;
 
-    public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission, String carBodyType, int registrationNumber, int numberOfSeats) {
-        setBrand(brand);
-        setModel(model);
+
+    public Car(String brand, String model, double engineVolume, String color, int year, String country,
+               String transmission, String carBodyType, int registrationNumber, int numberOfSeats,  int maxSpeed) {
+        super(brand, model, year, country, color,  maxSpeed);
         setEngineVolume(engineVolume);
         setColor(color);
-        setYear(year);
-        setCountry(country);
         setTransmission(transmission);
         setCarBodyType(carBodyType);
         setRegistrationNumber(registrationNumber);
         setNumberOfSeats(numberOfSeats);
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    /*
-    Модификатор доступа private позволяет защитить от изменение поле "brand"
-     */
-    private void setBrand(String brand) {
-        if (brand ==null || brand.equals("")){
-            this.brand = "default";
-        }
-        else{
-            this.brand = brand;
-        }
-    }
-
-    public String getModel() {
-        return model;
-    }
-    /*
-    Модификатор доступа private позволяет защитить от изменение поле "model"
-     */
-    private void setModel(String model) {
-        if (model == null || model.equals("")) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
-    }
 
     public double getEngineVolume() {
         return engineVolume;
@@ -69,46 +34,6 @@ public class Car {
             this.engineVolume = 1.5;
         } else {
             this.engineVolume = engineVolume;
-        }
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color ==null || color.equals("")) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-    }
-
-    public int getYear() {
-        return year;
-    }
-    /*
-    Модификатор доступа private позволяет защитить от изменение поле "model"
-     */
-    private void setYear(int year) {
-        if (year <= 0) {
-            this.year = 2000;
-        } else {
-            this.year = year;
-        }
-    }
-
-    public String getCountry() {
-        return country;
-    }
-    /*
-    Модификатор доступа private позволяет защитить от изменение поле "country"
-     */
-    private void setCountry(String country) {
-        if (country ==null || country.equals("")) {
-            this.country = "default";
-        } else {
-            this.country = country;
         }
     }
 
@@ -169,7 +94,7 @@ public class Car {
     }
 
     public String getTiresType() {
-        if (isSummerTires == true) {
+        if (isSummerTires) {
             return "Summer tires";
         }
         return "Winter tires.";
@@ -199,19 +124,16 @@ public class Car {
     }
     @Override
     public String toString() {
-        return "Автомобиль" +
-                " " + brand +
-                " " + model +
+        return "Автомобиль" + super.toString() + " " +
                 ", объем двигателя — " + engineVolume +
-                ", цвет кузова — " + color +
-                ", год выпуска — " + year +
-                ", сборка - " + country + '\n' +
-                "трансмиссия - " + transmission +
+                "трансмиссия - " + transmission + '\n' +
                 ", тип кузова - " + carBodyType +
                 ", регистрационный номер - " + registrationNumber +
                 ", количество мест - " + numberOfSeats
                 ;
     }
+
+
 
     public class Key {
         private boolean isRemoteEngineStart;
