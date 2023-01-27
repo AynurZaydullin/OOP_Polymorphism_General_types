@@ -1,23 +1,17 @@
 package pro.sky.java.course2.transport;
 
-
-public class Transport {
+public abstract class Transport {
     private String brand;
     private String model;
-    private int year;
-    private String country;
-    private String color;
-    private int maxSpeed;
+    private double engineVolume;
+    public abstract void start();  // метод "Начать движение"
+    public abstract void stop();  // метод "Закончить движение"
 
-    public Transport(String brand, String model, int year, String country, String color,  int maxSpeed) {
-        setBrand(brand);
-        setModel(model);
-        setYear(year);
-        setCountry(country);
-        setColor(color);
-        setMaxSpeed(maxSpeed);
+    public Transport(String brand, String model, double engineVolume) {
+        this.brand = brand;
+        this.model = model;
+        this.engineVolume = engineVolume;
     }
-
     public String getBrand() {
         return brand;
     }
@@ -33,7 +27,6 @@ public class Transport {
             this.brand = brand;
         }
     }
-
     public String getModel() {
         return model;
     }
@@ -44,67 +37,22 @@ public class Transport {
             this.model = model;
         }
     }
-
-    public int getYear() {
-        return year;
+    public double getEngineVolume() {
+        return engineVolume;
     }
-    /*
-    Модификатор доступа private позволяет защитить от изменение поле "model"
-     */
-    private void setYear(int year) {
-        if (year <= 0) {
-            this.year = 2000;
+
+    public void setEngineVolume(double engineVolume) {
+        if (engineVolume <= 0) {
+            this.engineVolume = 1.5;
         } else {
-            this.year = year;
+            this.engineVolume = engineVolume;
         }
     }
-
-    public String getCountry() {
-        return country;
-    }
-    /*
-    Модификатор доступа private позволяет защитить от изменение поле "country"
-     */
-    private void setCountry(String country) {
-        if (country ==null || country.equals("")) {
-            this.country = "default";
-        } else {
-            this.country = country;
-        }
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color ==null || color.equals("")) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-    }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        if (country ==null || country.equals("")) {
-            this.maxSpeed = 0;
-        } else {
-            this.maxSpeed = maxSpeed;
-        }
-    }
-
     @Override
     public String toString() {
         return  " " + brand +
                 " " + model +
-                ", цвет кузова — " + color + '\n' +
-                ", год выпуска — " + year +
-                ", сборка - " + country  +
-                ", Максимальная скорость передвижения - " + maxSpeed
+                ", объем двигателя — " + engineVolume + " "
                 ;
     }
 }
