@@ -1,7 +1,6 @@
 package pro.sky.java.course2.transport;
 
-import java.time.LocalDate;
-
+// D - обобщенный (параметризованный) тип данных. Клас Car реализует интерфейс Гонщик (соревнующийся) для Car.
 public class Car<D extends Driver> extends Transport implements Racer {
 
     public Car(String brand, String model, double engineVolume, D driver) {

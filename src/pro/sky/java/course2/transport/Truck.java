@@ -1,5 +1,5 @@
 package pro.sky.java.course2.transport;
-
+// D - обобщенный (параметризованный) тип данных. Клас Truck реализует интерфейс Гонщик (соревнующийся) для Truck.
 public class Truck<D extends Driver> extends Transport implements Racer{
     private D driver;
     public Truck(String brand, String model, double engineVolume, D driver) {

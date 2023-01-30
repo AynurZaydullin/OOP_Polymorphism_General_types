@@ -21,7 +21,7 @@ public class Driver {
 
     public String setLastName(String lastName) {
         if (lastName == null || lastName.equals("")) {
-            System.out.println("Введите фамилию.");
+            System.out.println("Поле не может быть пустым или null. Введите фамилию.");
             lastName = "default";
         }
         return lastName;
@@ -33,7 +33,7 @@ public class Driver {
 
     public String setName(String name) {
         if (name == null || lastName.equals("")) {
-            System.out.println("Введите имя.");
+            System.out.println("Поле не может быть пустым или null. Введите имя.");
             name = "default";
         }
         return name;
@@ -45,7 +45,7 @@ public class Driver {
 
     public String setMiddleName(String middleName) {
         if (middleName == null || lastName.equals("")) {
-            System.out.println("Введите отчество.");
+            System.out.println("Поле не может быть пустым или null. Введите отчество.");
             middleName = "default";
         }
         return middleName;
@@ -57,7 +57,7 @@ public class Driver {
 
     public String setDrivingLicense(String drivingLicense) {
         if (drivingLicense == null || lastName.equals("")) {
-            System.out.println("Введите категорию водительских прав.");
+            System.out.println("Поле не может быть пустым или null. Введите категорию водительских прав.");
             drivingLicense = "default";
         }
         return drivingLicense;
@@ -69,7 +69,7 @@ public class Driver {
 
     public int setDrivingExperience(int drivingExperience) {
         if (drivingExperience < 0) {
-            System.out.println("Введите водительский стаж больше или равен 0.");
+            System.out.println("Поле не может быть пустым или null. Введите водительский стаж больше или равен 0.");
             drivingExperience = 0;
         }
         return drivingExperience;

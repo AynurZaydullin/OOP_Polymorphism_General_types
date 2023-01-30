@@ -1,6 +1,6 @@
 package pro.sky.java.course2.transport;
 
-public abstract class Transport<D extends Driver> {
+public abstract class Transport<D extends Driver> {// D - обобщенный (параметризованный) тип данных.
     private String brand;
     private String model;
     private double engineVolume;
@@ -12,7 +12,7 @@ public abstract class Transport<D extends Driver> {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
-        this.driver = driver;
+        this.driver = setDriver(driver);
     }
     public String getBrand() {
         return brand;
@@ -21,42 +21,39 @@ public abstract class Transport<D extends Driver> {
     /*
     Модификатор доступа private позволяет защитить от изменение поле "brand"
      */
-    private void setBrand(String brand) {
+    private String setBrand(String brand) {
         if (brand ==null || brand.equals("")){
-            this.brand = "default";
+            System.out.println("Поле не может быть пустым или null. Введите фамилию.");
+            brand = "default";
         }
-        else{
-            this.brand = brand;
-        }
+        return brand;
     }
     public String getModel() {
         return model;
     }
-    public void setModel(String model) {
+    public String setModel(String model) {
         if (model == null || model.equals("")) {
             this.model = "default";
-        } else {
-            this.model = model;
         }
+        return model;
     }
     public double getEngineVolume() {
         return engineVolume;
     }
 
-    public void setEngineVolume(double engineVolume) {
+    public double setEngineVolume(double engineVolume) {
         if (engineVolume <= 0) {
             this.engineVolume = 1.5;
-        } else {
-            this.engineVolume = engineVolume;
         }
+        return engineVolume;
     }
 
     public D getDriver() {
         return driver;
     }
 
-    public void setDriver(D driver) {
-        this.driver = driver;
+    public D setDriver(D driver) {
+        return driver;
     }
 
     @Override
