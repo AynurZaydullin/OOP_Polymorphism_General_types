@@ -1,16 +1,18 @@
 package pro.sky.java.course2.transport;
 
-public abstract class Transport {
+public abstract class Transport<D extends Driver> {
     private String brand;
     private String model;
     private double engineVolume;
+    private D driver;
     public abstract void start();  // метод "Начать движение"
     public abstract void stop();  // метод "Закончить движение"
 
-    public Transport(String brand, String model, double engineVolume) {
+    public Transport(String brand, String model, double engineVolume, D driver) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
+        this.driver = driver;
     }
     public String getBrand() {
         return brand;
@@ -48,6 +50,15 @@ public abstract class Transport {
             this.engineVolume = engineVolume;
         }
     }
+
+    public D getDriver() {
+        return driver;
+    }
+
+    public void setDriver(D driver) {
+        this.driver = driver;
+    }
+
     @Override
     public String toString() {
         return  " " + brand +
